@@ -1,0 +1,14 @@
+version: 2.1
+
+jobs:
+  parse:
+    docker:
+      - image: circleci/ruby:2.6.3
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: echo "hi"
+workflows:
+  parse:
+    jobs:
+      - parse
